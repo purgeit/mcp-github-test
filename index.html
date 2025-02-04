@@ -3,72 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Strategic Consulting Services</title>
-    <link rel="stylesheet" href="styles.css?v=1.1">
+    <title>Bambino Consulting | Transform Your Growth</title>
+    <meta name="description" content="Expert consulting services helping businesses achieve 30% average growth through strategic planning, process optimization, and digital transformation.">
+    <link rel="stylesheet" href="styles.css?v=1.3">
     <script src="js/form-handler.js" defer></script>
 </head>
 <body>
     <header>
         <nav>
-            <h1>Strategic Consulting</h1>
+            <h1>Bambino Consulting</h1>
             <ul>
+                <li><a href="#results">Results</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#process">Process</a></li>
+                <li><a href="#contact" class="cta-button">Get Started</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h2>Transform Your Business</h2>
-            <p>Expert consulting services to drive growth and innovation</p>
+            <div class="hero-content">
+                <h2>Accelerate Your Business Growth</h2>
+                <p class="hero-subtitle">We help mid-market companies achieve 30% average growth through strategic planning and execution</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="primary-button">Book Consultation</a>
+                    <a href="#case-studies" class="secondary-button">View Case Studies</a>
+                </div>
+                <div class="trust-indicators">
+                    <div class="metric">
+                        <span class="number">200+</span>
+                        <span class="label">Clients Served</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">30%</span>
+                        <span class="label">Avg. Growth Rate</span>
+                    </div>
+                    <div class="metric">
+                        <span class="number">95%</span>
+                        <span class="label">Client Satisfaction</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="results">
+            <h2>Proven Results</h2>
+            <div class="results-grid">
+                <div class="case-study-card">
+                    <div class="company-logo">TechCorp</div>
+                    <p class="achievement">Increased revenue by 45% in 12 months</p>
+                    <p class="solution">Through market expansion strategy and operational efficiency improvements</p>
+                    <a href="#" class="read-more">Read Case Study →</a>
+                </div>
+                <div class="case-study-card">
+                    <div class="company-logo">ManufactPro</div>
+                    <p class="achievement">Reduced operational costs by 28%</p>
+                    <p class="solution">By implementing lean processes and digital transformation</p>
+                    <a href="#" class="read-more">Read Case Study →</a>
+                </div>
+                <div class="case-study-card">
+                    <div class="company-logo">ServiceMax</div>
+                    <p class="achievement">Scaled operations to 3 new markets</p>
+                    <p class="solution">With sustainable growth strategy and process optimization</p>
+                    <a href="#" class="read-more">Read Case Study →</a>
+                </div>
+            </div>
         </section>
 
         <section id="services">
             <h2>Our Services</h2>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Strategy Development</h3>
-                    <p>Comprehensive business strategy planning and execution</p>
+                    <div class="service-icon">📈</div>
+                    <h3>Growth Strategy</h3>
+                    <ul class="service-benefits">
+                        <li>Market Opportunity Analysis</li>
+                        <li>Competitive Positioning</li>
+                        <li>Revenue Stream Optimization</li>
+                        <li>Growth Roadmap Development</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Discuss Your Growth Goals →</a>
                 </div>
                 <div class="service-card">
+                    <div class="service-icon">⚙️</div>
                     <h3>Process Optimization</h3>
-                    <p>Streamline operations and improve efficiency</p>
+                    <ul class="service-benefits">
+                        <li>Operational Efficiency Audit</li>
+                        <li>Cost Reduction Strategies</li>
+                        <li>Workflow Automation</li>
+                        <li>Quality Management Systems</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Improve Your Operations →</a>
                 </div>
                 <div class="service-card">
+                    <div class="service-icon">🔄</div>
                     <h3>Digital Transformation</h3>
-                    <p>Navigate the digital landscape with confidence</p>
+                    <ul class="service-benefits">
+                        <li>Technology Stack Assessment</li>
+                        <li>Digital Strategy Development</li>
+                        <li>System Integration</li>
+                        <li>Change Management</li>
+                    </ul>
+                    <a href="#contact" class="service-cta">Start Your Digital Journey →</a>
                 </div>
             </div>
         </section>
 
         <section id="contact">
-            <h2>Get in Touch</h2>
-            <form id="contact-form">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h2>Let's Grow Your Business</h2>
+                    <p class="value-prop">Schedule a consultation to discuss how we can help you:</p>
+                    <ul class="benefits-list">
+                        <li>✓ Increase revenue and market share</li>
+                        <li>✓ Optimize operational efficiency</li>
+                        <li>✓ Accelerate digital transformation</li>
+                        <li>✓ Build sustainable growth systems</li>
+                    </ul>
+                    <div class="guarantee">
+                        <p>🔒 100% Confidential • No Obligation</p>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                <form id="contact-form" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="John Smith">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Business Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="john@company.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company Name:</label>
+                        <input type="text" id="company" name="company" required placeholder="Your Company Ltd.">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label for="challenge">Biggest Business Challenge:</label>
+                        <textarea id="challenge" name="challenge" rows="3" required placeholder="Tell us about your main growth challenges..."></textarea>
+                    </div>
+                    <button type="submit">Book Consultation</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="testimonials">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Bambino Consulting helped us identify key growth opportunities and implement processes that led to a 40% revenue increase in just 8 months."
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/50/50" alt="CEO headshot" class="author-image">
+                        <div class="author-info">
+                            <strong>Sarah Johnson</strong>
+                            <span>CEO, TechCorp</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="company">Company:</label>
-                    <input type="text" id="company" name="company">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Their process optimization recommendations helped us reduce costs by 28% while improving our service quality. Exceptional results!"
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="/api/placeholder/50/50" alt="COO headshot" class="author-image">
+                        <div class="author-info">
+                            <strong>Michael Chang</strong>
+                            <span>COO, ManufactPro</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="message">Message:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <button type="submit">Send Message</button>
-            </form>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Strategic Consulting. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Bambino Consulting</h3>
+                <p>Transforming businesses through strategic growth solutions</p>
+            </div>
+            <div class="footer-contact">
+                <p>📞 (555) 123-4567</p>
+                <p>✉️ contact@bambinoconsulting.com</p>
+            </div>
+            <div class="footer-certifications">
+                <p>🏆 Certified Business Consultants</p>
+                <p>🔒 ISO 27001 Certified</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Bambino Consulting. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
