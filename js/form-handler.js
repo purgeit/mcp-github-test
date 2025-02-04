@@ -1,6 +1,8 @@
 // Form validation and submission handling
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('contact-form');
+    
+    // Form validation configuration
     const inputs = {
         name: {
             element: document.getElementById('name'),
@@ -14,13 +16,18 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         company: {
             element: document.getElementById('company'),
-            validation: (value) => value.length === 0 || value.length >= 2,
+            validation: (value) => value.length >= 2,
             errorMessage: 'Company name must be at least 2 characters long'
         },
-        message: {
-            element: document.getElementById('message'),
+        phone: {
+            element: document.getElementById('phone'),
+            validation: (value) => /^[\d\s+()-]{10,}$/.test(value),
+            errorMessage: 'Please enter a valid phone number'
+        },
+        challenge: {
+            element: document.getElementById('challenge'),
             validation: (value) => value.length >= 10,
-            errorMessage: 'Message must be at least 10 characters long'
+            errorMessage: 'Please provide more details about your challenge'
         }
     };
 
@@ -34,22 +41,17 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackDiv.className = 'validation-feedback';
         wrapper.appendChild(feedbackDiv);
         
-        // Create icon container
-        const iconSpan = document.createElement('span');
-        iconSpan.className = 'validation-icon';
-        wrapper.appendChild(iconSpan);
-
         // Add input event listeners
         input.addEventListener('input', () => validateInput(inputName));
         input.addEventListener('blur', () => validateInput(inputName));
     });
 
+    // Validation function
     function validateInput(inputName) {
         const { element, validation, errorMessage } = inputs[inputName];
         const value = element.value.trim();
         const wrapper = element.parentElement;
         const feedbackDiv = wrapper.querySelector('.validation-feedback');
-        const iconSpan = wrapper.querySelector('.validation-icon');
         
         const isValid = validation(value);
         
@@ -61,20 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
         feedbackDiv.textContent = isValid ? '' : errorMessage;
         feedbackDiv.className = 'validation-feedback ' + (isValid ? 'valid-feedback' : 'invalid-feedback');
         
-        // Update icon
-        iconSpan.innerHTML = isValid ? '✓' : '';
-        iconSpan.className = 'validation-icon ' + (isValid ? 'valid-icon' : '');
-        
-        return isValid;
-    }
-
-    function validateForm() {
-        let isValid = true;
-        Object.keys(inputs).forEach(inputName => {
-            if (!validateInput(inputName)) {
-                isValid = false;
-            }
-        });
         return isValid;
     }
 
@@ -82,7 +70,15 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        if (!validateForm()) {
+        // Validate all inputs
+        let isValid = true;
+        Object.keys(inputs).forEach(inputName => {
+            if (!validateInput(inputName)) {
+                isValid = false;
+            }
+        });
+
+        if (!isValid) {
             showNotification('Please correct the errors before submitting.', 'error');
             return;
         }
@@ -92,13 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
             name: inputs.name.element.value.trim(),
             email: inputs.email.element.value.trim(),
             company: inputs.company.element.value.trim(),
-            message: inputs.message.element.value.trim(),
+            phone: inputs.phone.element.value.trim(),
+            challenge: inputs.challenge.element.value.trim(),
             timestamp: new Date().toISOString()
         };
 
         try {
             // Here you would typically send the data to your backend
-            // For demonstration, we'll log to console and show success message
+            // For demo, we'll just log to console and show success message
             console.log('Form submission:', formData);
             
             // Simulate API call
@@ -113,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 element.classList.remove('is-valid', 'is-invalid');
                 const wrapper = element.parentElement;
                 wrapper.querySelector('.validation-feedback').textContent = '';
-                wrapper.querySelector('.validation-icon').innerHTML = '';
             });
 
         } catch (error) {
@@ -130,7 +126,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         document.body.appendChild(notification);
         
-        // Remove notification after 5 seconds
         setTimeout(() => {
             notification.remove();
         }, 5000);
